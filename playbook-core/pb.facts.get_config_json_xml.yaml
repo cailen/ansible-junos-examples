@@ -1,7 +1,7 @@
 
 ---
 - name: junos_facts module
-  hosts: vsrx1
+  hosts: juniper
   connection: local
   gather_facts: no
   tasks:
