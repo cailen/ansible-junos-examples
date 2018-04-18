@@ -11,13 +11,10 @@
 
   - name: Collect device Facts and Configuration in XML
     junos_facts:
-      gather_subset: config
-      config_format: xml
+      gather_subset: all
+      config_format: text
       provider: "{{ credential }}"
     register: result
 
   - name: Configuration in JSON (converted from XML)
-    debug: var=result.ansible_facts.config_json
-
-  - name: Configuration in XML
-    debug: var=result.ansible_facts.config
+    debug: var=result.ansible_facts.ansible_net_config
