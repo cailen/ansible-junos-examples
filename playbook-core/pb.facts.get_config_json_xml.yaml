@@ -11,7 +11,6 @@
 
   - name: Collect device Facts and Configuration in XML
     junos_facts:
-      config: yes
       config_format: xml
       provider: "{{ credential }}"
     register: result
